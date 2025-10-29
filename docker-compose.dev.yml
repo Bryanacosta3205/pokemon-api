@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - '3001:3001'
+      - '9229:9229'
+    volumes:
+      # Mount source code for hot reloading
+      - ./src:/home/app/src
+      - ./package.json:/home/app/package.json
+      - ./tsconfig.json:/home/app/tsconfig.json
+      # Prevent node_modules from being overwritten
+      - /home/app/node_modules
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env

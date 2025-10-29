@@ -1,0 +1,26 @@
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  roots: ['<rootDir>/tests', '<rootDir>/src'],
+  testMatch: ['**/tests/**/*.test.ts', '**/tests/**/*.spec.ts', '**/__tests__/**/*.ts'],
+  transform: {
+    '^.+\\.ts$': 'ts-jest',
+  },
+  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.interface.ts', '!src/server.ts', '!src/app.ts'],
+  coverageDirectory: 'coverage',
+  coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/tests/'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@config/(.*)$': '<rootDir>/src/config/$1',
+    '^@controllers/(.*)$': '<rootDir>/src/controllers/$1',
+    '^@services/(.*)$': '<rootDir>/src/services/$1',
+    '^@interfaces/(.*)$': '<rootDir>/src/interfaces/$1',
+    '^@middlewares/(.*)$': '<rootDir>/src/middlewares/$1',
+    '^@routes/(.*)$': '<rootDir>/src/routes/$1',
+    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^@cache/(.*)$': '<rootDir>/src/cache/$1',
+  },
+  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
+  verbose: true,
+  testTimeout: 10000,
+};
