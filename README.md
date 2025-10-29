@@ -23,8 +23,14 @@ pokemon-api-backend/
 ## API Endpoints
 ### Get All Pokémon
 ```
-GET /pokemon
+GET /pokemons
 ```
+
+### Get Pokemon with pagination
+```
+GET /pokemons?limit=20&page=1
+```
+
 ### Response
 ```
 {
