@@ -1,7 +1,9 @@
 # Pokémon API Backend
+
 A scalable Node.js + Express + TypeScript backend API that fetches and serves all 1302 Pokémon from the PokeAPI.
 
-## Folder structure 
+## Folder structure
+
 ```
 pokemon-api-backend/
 ├── src/
@@ -20,18 +22,23 @@ pokemon-api-backend/
 ├── docker-compose.yml   # Docker Compose configuration
 └── package.json         # Dependencies and scripts
 ```
+
 ## API Endpoints
+
 ### Get All Pokémon
+
 ```
 GET /pokemons
 ```
 
 ### Get Pokemon with pagination
+
 ```
 GET /pokemons?limit=20&page=1
 ```
 
 ### Response
+
 ```
 {
   "success": true,
@@ -46,16 +53,18 @@ GET /pokemons?limit=20&page=1
   ]
 }
 ```
+
 ### Clear Cache (Development)
+
 ```
 GET /clear
 ```
 
 ### Health check
+
 ```
 GET /health
 ```
-
 
 ## Setup
 
@@ -67,34 +76,40 @@ GET /health
 ## Local Setup
 
 1. Clone the repository
+
 ```
 git clone <your-repo-url>
 cd pokemon-api-backend
 ```
 
 2. Install dependencies
+
 ```
 npm install
 ```
+
 3. Create environment file
+
 ```
 cp .env.example .env
 ```
 
 4. Run in development mode
+
 ```
 npm run dev
 ```
 
 The API will be available at http://localhost:3001
 
-
 ## Using docker
+
 ```
 docker-compose -f docker-compose.dev.yml up
 ```
 
 ## Testing
+
 ```
 # Run tests
 npm test
@@ -107,6 +122,7 @@ npm run test
 ```
 
 ## Code quality
+
 ```
 # Run linter
 npm run lint
