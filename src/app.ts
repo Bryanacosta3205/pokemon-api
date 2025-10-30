@@ -16,7 +16,6 @@ class App {
     this.app.use(
       cors({
         origin: config.corsOrigin,
-        credentials: true,
       })
     );
 
